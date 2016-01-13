@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CountDown</title>
+</head>
+<body>
+<span class="count"></span>
+<script>
+    function getTimeString() {
+        var now = new Date();
+        var end = new Date(now.getFullYear() + 1, 0, 1);
+        var delta = (end - now) / 1000;
+        var days = Math.floor(delta / (60 * 60 * 24));
+        var hours = Math.floor(delta / (60 * 60) % 24);
+        var minutes = Math.floor(delta / 60 % 60);
+        var seconds = Math.floor(delta % 60);
+        return now.getFullYear() + '年还剩 ' + days + '天 '
+                + hours + '时 ' + minutes + '分 ' + seconds + '秒';
+    }
+    var element = document.getElementsByClassName('count')[0];
+    setInterval(function () {
+        element.innerText = getTimeString();
+    }, 1000);
+</script>
+</body>
+</html>
