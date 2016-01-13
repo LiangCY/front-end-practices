@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Overlay</title>
+    <style>
+        .overlay {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .overlay article {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -200px 0 0 -200px;
+            width: 400px;
+            height: 400px;
+            background-color: white;
+            box-shadow: 0 0 12px black;
+        }
+    </style>
+</head>
+<body>
+<div class="overlay" style="display: none">
+    <article>
+        <h1>弹出层</h1>
+    </article>
+</div>
+<button id="button">Show Overlay</button>
+<script>
+    var overlay = document.getElementsByClassName('overlay')[0];
+    function openOverlay() {
+        overlay.style.display = 'block';
+    }
+    function closeOverlay(overlay) {
+        overlay.style.display = 'none';
+    }
+    var button = document.getElementById('button');
+    button.addEventListener('click', function (e) {
+        openOverlay();
+    });
+    overlay.addEventListener('click', function (e) {
+        if (e.target == e.currentTarget) {
+            closeOverlay(overlay);
+        }
+    });
+</script>
+</body>
+</html>

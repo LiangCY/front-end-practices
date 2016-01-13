@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tooltip</title>
+    <style>
+        .tip {
+            margin-top: 100px;
+            margin-left: 100px;
+            padding: 0 10px;
+            width: 200px;
+            height: 40px;
+            border: solid 1px black;
+        }
+
+        .ok {
+            line-height: 40px;
+            cursor: pointer;
+            color: #2366CC;
+        }
+
+        .close {
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="tip">
+    <span class="ok">我知道了</span>
+    <span class="close">x</span>
+</div>
+<script>
+    var tip = document.getElementsByClassName('tip')[0];
+    var ok = document.getElementsByClassName('ok')[0];
+    var close = document.getElementsByClassName('close')[0];
+
+    if (getCookie('ok') || getCookie('tip-close')) {
+        tip.style.display = 'none';
+    }
+
+    ok.addEventListener('click', function () {
+        setCookie('tip-ok', '1');
+        tip.style.display = 'none';
+    });
+    close.addEventListener('click', function () {
+        setCookie('tip-close', '1', 1000 * 30);
+        tip.style.display = 'none';
+    });
+    function getCookie(cName) {
+        if (document.cookie.length > 0) {
+            var cStart = document.cookie.indexOf(cName + "=");
+            if (cStart >= 0) {
+                cStart = cStart + cName.length + 1;
+                var cEnd = document.cookie.indexOf(";", cStart);
+                if (cEnd == -1) cEnd = document.cookie.length;
+                return decodeURIComponent(document.cookie.substring(cStart, cEnd));
+            }
+        }
+        return ""
+    }
+
+    function setCookie(cName, value, expires) {
+        var expiresDate = new Date();
+        expiresDate.setTime(expiresDate.getTime() + expires);
+        document.cookie = cName + "=" + encodeURIComponent(value) +
+                ((expires == null) ? "" : ";expires=" + expiresDate.toGMTString());
+    }
+    console.log(document.cookie);
+</script>
+</body>
+</html>
