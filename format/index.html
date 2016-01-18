@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Format</title>
+</head>
+<body>
+<script>
+    (function (window) {
+        function fn(str) {
+            this.str = str;
+        }
+
+        fn.prototype.format = function () {
+            var arg = Array.prototype.slice.call(arguments);
+            return this.str.replace(/\{\s*(\d+)\s*\}/g, function (a, b) {
+                return arg[b] || '';
+            })
+        }
+        window.fn = fn;
+    })(window);
+
+    (function () {
+        var t = new fn('<p><a href="{0}">{1}</a><span>{2}</span></p>');
+        console.log(t.format('http://www.google.com', 'Google', 'Welcome'));
+    })();
+</script>
+</body>
+</html>
