@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get Bytes</title>
+</head>
+<body>
+<p>求一个字符串的字节长度</p>
+<script>
+    function getBytes(str) {
+        var len = str.length;
+        var bytes = len;
+        for (var i = 0; i < len; i++) {
+            if (str.charCodeAt(i) > 255) {
+                bytes++;
+            }
+        }
+        return bytes;
+    }
+    console.log(getBytes("你好，world"));
+</script>
+</body>
+</html>
