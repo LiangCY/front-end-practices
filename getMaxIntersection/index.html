@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get max intersection</title>
+</head>
+<body>
+<p>查找两个字符串的最大公共子串</p>
+<script>
+    function getMaxIntersection(strA, strB) {
+
+        var aLen = strA.length;
+        var bLen = strB.length;
+
+        var maxStart = 0;
+        var maxLength = 0;
+
+        for (var i = 0; i < aLen; i++) {
+            var aChar = strA.charAt(i);
+            var indexB = 0;
+
+            var indexA = i;
+
+            while (indexB < bLen && strB.charAt(indexB) != aChar) {
+                indexB++;
+            }
+            if (indexB == bLen) continue;
+            while (strB.charAt(indexB) == strA.charAt(indexA) && indexA < aLen && indexB < bLen) {
+                indexA++;
+                indexB++;
+            }
+            if (indexA - i > maxLength) {
+                maxLength = indexA - i;
+                maxStart = i;
+            }
+        }
+        return strA.substr(maxStart, maxLength);
+    }
+    console.log(getMaxIntersection("abcecade", "dgecadde"));
+</script>
+</body>
+</html>
