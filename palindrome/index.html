@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Palindrome</title>
+</head>
+<body>
+<p>判断字符串是不是回文</p>
+<script>
+    function isPalindrome(str) {
+        var raw = str.replace(/\W/g, '').toLowerCase();
+        return raw.split('').reverse().join('') == raw;
+    }
+    console.log(isPalindrome("A man, a plan, a canal, Panama."));
+</script>
+</body>
+</html>
