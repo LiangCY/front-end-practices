@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remove Duplicate</title>
+</head>
+<body>
+<p>
+    有一个大数组，var a = ['1', '2', '3', ...]，a的长度是100，内容填充随机整数的字符串。
+    请先构造此数组a，然后设计一个算法将其内容去重。
+</p>
+<script>
+    function fillArray(min, max) {
+        var arr = [];
+        min = min == undefined ? 1 : min;
+        max = max == undefined ? 100 : max;
+        var width = max - min;
+        for (var i = 100; i >= 1; i--) {
+            arr.push('' + (Math.floor(Math.random() * width + min)));
+        }
+        return arr;
+    }
+    function removeDuplicate(arr) {
+        var map = {};
+        for (var i = arr.length - 1; i >= 0; i--) {
+            if (map[arr[i]]) {
+                arr.splice(i, 1)
+            } else {
+                map[arr[i]] = true;
+            }
+        }
+    }
+    var arr = fillArray(1, 10);
+    console.log(arr);
+    removeDuplicate(arr);
+    console.log(arr);
+</script>
+</body>
+</html>
