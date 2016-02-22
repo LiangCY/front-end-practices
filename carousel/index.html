@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            position: relative;
+            margin: 20px auto;
+            width: 600px;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .box .images {
+            position: absolute;
+            width: 2400px;
+            height: 100%;
+        }
+
+        .box .images img {
+            float: left;
+            width: 600px;
+            height: 500px;
+        }
+
+        .nav {
+            width: 120px;
+            margin: 16px auto;
+        }
+
+        .nav ul li {
+            width: 30px;
+            height: 20px;
+            float: left;
+            display: inline-block;
+            list-style-type: none;
+        }
+
+        .nav ul li .dot {
+            width: 20px;
+            height: 20px;
+            margin: auto;
+            background-color: #BBB;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .nav ul li.active .dot {
+            width: 20px;
+            height: 20px;
+            margin: auto;
+            background-color: #D35968;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="images">
+        <img src="images/1.jpg">
+        <img src="images/2.jpg">
+        <img src="images/3.jpg">
+        <img src="images/4.jpg">
+    </div>
+</div>
+<div class="nav">
+    <ul>
+        <li>
+            <div class="dot"></div>
+        </li>
+        <li>
+            <div class="dot"></div>
+        </li>
+        <li>
+            <div class="dot"></div>
+        </li>
+        <li>
+            <div class="dot"></div>
+        </li>
+    </ul>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    var timer;
+    var current = 0;
+    $($('.nav li').get(current))
+            .addClass('active');
+    startTimer();
+    $('.nav .dot').on('click', function () {
+        stopTimer();
+        current = $(this).parent().index();
+        $($('.nav li').get(current))
+                .addClass('active')
+                .siblings()
+                .removeClass('active');
+        $('.images').animate({left: current * -600}, 200);
+        startTimer();
+    });
+    function startTimer() {
+        timer = setInterval(function () {
+            current++;
+            if (current < 4) {
+                $('.images').animate({left: current * -600}, 500);
+            } else {
+                $('.images').animate({left: 0}, 500);
+                current = 0;
+            }
+            $($('.nav li').get(current))
+                    .addClass('active')
+                    .siblings()
+                    .removeClass('active');
+        }, 4000);
+    }
+    function stopTimer() {
+        if (timer) clearTimeout(timer);
+    }
+</script>
+</body>
+</html>
