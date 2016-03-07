@@ -44,7 +44,7 @@
         tip.style.display = 'none';
     });
     close.addEventListener('click', function () {
-        setCookie('tip-close', '1', 1000 * 30);
+        setCookie('tip-close', '1', 1000 * 60 * 60 * 24);
         tip.style.display = 'none';
     });
     function getCookie(cName) {
@@ -65,6 +65,9 @@
         expiresDate.setTime(expiresDate.getTime() + expires);
         document.cookie = cName + "=" + encodeURIComponent(value) +
                 ((expires == null) ? "" : ";expires=" + expiresDate.toGMTString());
+    }
+    function clearCookie(cName) {
+        setCookie(cName, "", -1);
     }
 </script>
 </body>

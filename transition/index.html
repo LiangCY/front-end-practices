@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    div {
+        background: #CCCCCC;
+        transition: all 0.5s;
+    }
+
+    #first {
+        float: left;
+        width: 100px;
+        height: 150px;
+    }
+
+    div:hover {
+        transform: scale(1.2);
+        transform-origin: 0 0;
+        background: #2366CC;
+        z-index: 99;
+    }
+
+    #second {
+        clear: left;
+        float: left;
+        margin-top: 10px;
+        width: 100px;
+        height: 150px
+    }
+
+    #third {
+        zoom: 1;
+        width: 200px;
+        margin-left: 110px;
+        height: 310px
+    }
+</style>
+<body>
+<div id="first"></div>
+<div id="second"></div>
+<div id="third"></div>
+<script>
+</script>
+</body>
+</html>
