@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find Prime Numbers</title>
+</head>
+<body>
+<p>找到10000以内的素数.</p>
+<script>
+    var arr = [2, 3];
+    for (var i = 5; i < 10000; i += 2) {
+        var index = 0;
+        var isPrime = true;
+        while (arr[index] <= Math.sqrt(i)) {
+            if (i % arr[index] == 0) {
+                isPrime = false;
+                break;
+            }
+            index++;
+        }
+        if (isPrime) {
+            arr.push(i);
+        }
+    }
+    console.log(arr);
+</script>
+</body>
+</html>
