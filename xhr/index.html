@@ -18,7 +18,7 @@
     }
     xhr.onreadystatechange = function () {
         if (this.readyState == 4) {
-            if (this.status = 200) {
+            if ((this.status >= 200 && this.status < 300) || this.status == 304) {
                 var response = this.responseText;
                 try {
                     var result = JSON.parse(response);
