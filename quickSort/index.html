@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quick Sort</title>
+</head>
+<body>
+<script>
+    Array.prototype.quickSort = function () {
+        if (this.length <= 1) return this;
+        var left = [];
+        var right = [];
+        var num = this[0];
+        for (var i = this.length - 1; i > 0; i--) {
+            var value = this[i];
+            if (value < num) {
+                left.push(value);
+            } else {
+                right.push(value);
+            }
+        }
+        return left.quickSort().concat(num, right.quickSort());
+    };
+    var testArr = [];
+    for (var i = 0; i < 100; i++) {
+        testArr.push(Math.round(Math.random() * 1000));
+    }
+    console.log(testArr);
+    console.log(testArr.quickSort());
+</script>
+</body>
+</html>
