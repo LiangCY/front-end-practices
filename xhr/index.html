@@ -18,7 +18,6 @@
     }
     xhr.onreadystatechange = function () {
         if (this.readyState == 4) {
-            console.log(this);
             if (this.status = 200) {
                 var response = this.responseText;
                 try {
