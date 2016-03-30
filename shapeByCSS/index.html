@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <title>Shape</title>
     <style>
-        .border {
+        #pic .border {
             position: relative;
             width: 110px;
             height: 70px;;
             border: 10px solid #666;
         }
 
-        .big-triangle {
+        #pic .big-triangle {
             bottom: 10px;
             left: 10px;
             position: absolute;
@@ -22,7 +22,7 @@
             border-right: 50px solid transparent;
         }
 
-        .small-triangle {
+        #pic .small-triangle {
             bottom: 10px;
             right: 10px;
             position: absolute;
@@ -33,7 +33,7 @@
             border-right: 30px solid transparent;
         }
 
-        .circle {
+        #pic .circle {
             position: absolute;
             width: 20px;
             height: 20px;
@@ -43,13 +43,56 @@
             border-radius: 50%;
         }
 
+        #message {
+            margin-top: 50px;
+            position: relative;
+        }
+
+        #message .rect {
+            position: absolute;
+            width: 296px;
+            height: 96px;
+            background: #fff;
+            border: 2px solid #000;
+            border-radius: 8px;
+        }
+
+        #message .big-triangle {
+            position: absolute;
+            height: 0;
+            width: 0;
+            top: 20px;
+            left: 298px;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid #000;
+        }
+
+        #message .small-triangle {
+            position: absolute;
+            height: 0;
+            width: 0;
+            top: 22px;
+            left: 298px;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 8px solid #fff;
+        }
+
     </style>
 </head>
 <body>
-<div class="border">
+<div id="pic">
+    <div class="border">
+        <div class="big-triangle"></div>
+        <div class="small-triangle"></div>
+        <div class="circle"></div>
+    </div>
+</div>
+<div id="message">
+    <div class="rect"></div>
     <div class="big-triangle"></div>
     <div class="small-triangle"></div>
-    <div class="circle"></div>
 </div>
 </body>
 </html>
