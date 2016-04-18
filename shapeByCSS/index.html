@@ -46,6 +46,7 @@
         #message {
             margin-top: 50px;
             position: relative;
+            height: 100px;
         }
 
         #message .rect {
@@ -73,12 +74,49 @@
             height: 0;
             width: 0;
             top: 22px;
-            left: 298px;
-            border-top: 8px solid transparent;
-            border-bottom: 8px solid transparent;
-            border-left: 8px solid #fff;
+            left: 297px;
+            border-top: 9px solid transparent;
+            border-bottom: 9px solid transparent;
+            border-left: 9px solid #fff;
         }
 
+        #star {
+            margin-top: 50px;
+            position: relative;
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 35px solid #888;
+            transform: rotate(35deg);
+        }
+
+        #star:before {
+            display: block;
+            content: '';
+            position: absolute;
+            top: -25px;
+            left: -30px;
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 40px solid #888;
+            transform: rotate(-35deg);
+        }
+
+        #star:after {
+            display: block;
+            content: '';
+            position: absolute;
+            left: -50px;
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 35px solid #888;
+            transform: rotate(-70deg);
+        }
     </style>
 </head>
 <body>
@@ -93,6 +131,8 @@
     <div class="rect"></div>
     <div class="big-triangle"></div>
     <div class="small-triangle"></div>
+</div>
+<div id="star">
 </div>
 </body>
 </html>
