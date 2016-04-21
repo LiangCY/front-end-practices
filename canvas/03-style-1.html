@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Style</title>
+</head>
+<body>
+<canvas id="tutorial" width="800" height="800"></canvas>
+<script>
+    var canvas = document.getElementById('tutorial');
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+        for (var i = 0; i < 6; i++) {
+            for (var j = 0; j < 6; j++) {
+                ctx.fillStyle = 'rgb(' + Math.floor(255 - 42.5 * i) + ',' +
+                        Math.floor(255 - 42.5 * j) + ',0)';
+                ctx.fillRect(j * 25, i * 25, 25, 25);
+            }
+        }
+        for (i = 0; i < 6; i++) {
+            for (j = 0; j < 6; j++) {
+                ctx.strokeStyle = 'rgb(0,' + Math.floor(255 - 42.5 * i) + ',' +
+                        Math.floor(255 - 42.5 * j) + ')';
+                ctx.beginPath();
+                ctx.arc(200 + j * 25, 12.5 + i * 25, 10, 0, Math.PI * 2, true);
+                ctx.stroke();
+            }
+        }
+
+        /**
+         * globalAlpha
+         */
+        ctx.fillStyle = '#FD0';
+        ctx.fillRect(400, 0, 75, 75);
+        ctx.fillStyle = '#6C0';
+        ctx.fillRect(475, 0, 75, 75);
+        ctx.fillStyle = '#09F';
+        ctx.fillRect(400, 75, 75, 75);
+        ctx.fillStyle = '#F30';
+        ctx.fillRect(475, 75, 75, 75);
+        ctx.fillStyle = '#FFF';
+        // 设置透明度值
+        ctx.globalAlpha = 0.2;
+        // 画半透明圆
+        for (i = 0; i < 7; i++) {
+            ctx.beginPath();
+            ctx.arc(475, 75, 10 + 10 * i, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        /**
+         * rgba()
+         */
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = 'rgb(255,221,0)';
+        ctx.fillRect(600, 0, 150, 37.5);
+        ctx.fillStyle = 'rgb(102,204,0)';
+        ctx.fillRect(600, 37.5, 150, 37.5);
+        ctx.fillStyle = 'rgb(0,153,255)';
+        ctx.fillRect(600, 75, 150, 37.5);
+        ctx.fillStyle = 'rgb(255,51,0)';
+        ctx.fillRect(600, 112.5, 150, 37.5);
+        // 画半透明矩形
+        for (i = 0; i < 10; i++) {
+            ctx.fillStyle = 'rgba(255,255,255,' + (i + 1) / 10 + ')';
+            for (j = 0; j < 4; j++) {
+                ctx.fillRect(605 + i * 14, 5 + j * 37.5, 14, 27.5)
+            }
+        }
+
+        /**
+         * 线型
+         */
+        // lineWidth
+        for (i = 0; i < 10; i++) {
+            ctx.lineWidth = 1 + i;
+            ctx.beginPath();
+            ctx.moveTo(5 + i * 14, 205);
+            ctx.lineTo(5 + i * 14, 340);
+            ctx.stroke();
+        }
+
+        // lineCap
+        var lineCap = ['butt', 'round', 'square'];
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = '#09f';
+        ctx.beginPath();
+        ctx.moveTo(210, 210);
+        ctx.lineTo(340, 210);
+        ctx.moveTo(210, 340);
+        ctx.lineTo(340, 340);
+        ctx.stroke();
+        ctx.strokeStyle = 'black';
+        for (i = 0; i < lineCap.length; i++) {
+            ctx.lineWidth = 15;
+            ctx.lineCap = lineCap[i];
+            ctx.beginPath();
+            ctx.moveTo(225 + i * 50, 210);
+            ctx.lineTo(225 + i * 50, 340);
+            ctx.stroke();
+        }
+
+        // lineJoin
+        var lineJoin = ['round', 'bevel', 'miter'];
+        ctx.lineWidth = 10;
+        for (i = 0; i < lineJoin.length; i++) {
+            ctx.lineJoin = lineJoin[i];
+            ctx.beginPath();
+            ctx.moveTo(395, 205 + i * 40);
+            ctx.lineTo(435, 245 + i * 40);
+            ctx.lineTo(475, 205 + i * 40);
+            ctx.lineTo(515, 245 + i * 40);
+            ctx.lineTo(555, 205 + i * 40);
+            ctx.stroke();
+        }
+    }
+</script>
+</body>
+</html>
