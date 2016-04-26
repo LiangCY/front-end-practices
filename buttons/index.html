@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buttons</title>
+    <style>
+        .button {
+            position: relative;
+            width: 200px;
+            height: 60px;
+            cursor: pointer;
+        }
+
+        .border {
+            position: absolute;
+        }
+
+        .border-top {
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #888;
+            transition: width .5s;
+        }
+
+        .border-right {
+            top: 0;
+            right: 0;
+            width: 2px;
+            height: 0;
+            background: #888;
+            transition: height .5s;
+        }
+
+        .border-bottom {
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: #888;
+            transition: width .5s;
+        }
+
+        .border-left {
+            bottom: 0;
+            left: 0;
+            width: 2px;
+            height: 0;
+            background: #888;
+            transition: height .5s;
+        }
+
+        .button:hover .border-left {
+            height: 60px;
+        }
+
+        .button:hover .border-right {
+            height: 60px;
+        }
+
+        .button:hover .border-bottom {
+            width: 200px;
+        }
+
+        .button:hover .border-top {
+            width: 200px;
+        }
+
+        .content {
+            position: absolute;
+            width: 180px;
+            height: 40px;
+            top: 10px;
+            left: 10px;
+            line-height: 40px;
+            text-align: center;
+            background: #555;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all .5s;
+        }
+
+        .button:hover .content {
+            background: #888;
+        }
+    </style>
+</head>
+<body>
+<div class="button">
+    <div class="border border-top"></div>
+    <div class="border border-right"></div>
+    <div class="border border-bottom"></div>
+    <div class="border border-left"></div>
+    <div class="content">BUTTON</div>
+</div>
+</body>
+</html>
