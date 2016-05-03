@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text</title>
+</head>
+<body>
+<canvas id="tutorial" width="800" height="800"></canvas>
+<script>
+    var canvas = document.getElementById('tutorial');
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+
+        /**
+         * 文本样式
+         * font = value
+         * 当前我们用来绘制文本的样式. 这个字符串使用和 CSS font 属性相同的语法. 默认的字体是 10px sans-serif.
+         * textAlign = value
+         * 文本对齐选项. 可选的值包括：start, end, left, right or center. 默认值是 start.
+         * textBaseline = value
+         * 基线对齐选项. 可选的值包括：top, hanging, middle, alphabetic, ideographic, bottom。默认值是 alphabetic.
+         * direction = value
+         * 文本方向. 可选的值包括：ltr, rtl, inherit.默认值是 inherit.
+         */
+        ctx.font = "48px serif";
+        ctx.fillText("Hello", 20, 50);
+        ctx.strokeText("Hello", 200, 50);
+    }
+</script>
+</body>
+</html>
