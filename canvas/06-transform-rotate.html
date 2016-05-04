@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rotate</title>
+</head>
+<body>
+<canvas id="canvas" width="800" height="800"></canvas>
+<script>
+    function draw() {
+        var ctx = document.getElementById('canvas').getContext('2d');
+        ctx.translate(400, 400);
+        for (var i = 1; i < 4; i++) {
+            ctx.save();
+            ctx.fillStyle = 'rgb(' + (80 * i) + ',' + (255 - 80 * i) + ',255)';
+
+            for (var j = 0; j < i * 6; j++) {
+                ctx.rotate(Math.PI * 2 / (i * 6));
+                ctx.beginPath();
+                ctx.arc(0, i * 100, 40, 0, Math.PI * 2, true);
+                ctx.fill();
+            }
+            ctx.restore();
+        }
+    }
+    draw();
+</script>
+</body>
+</html>
