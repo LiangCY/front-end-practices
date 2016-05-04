@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rotate</title>
+</head>
+<body>
+<canvas id="canvas" width="800" height="800"></canvas>
+<script>
+
+    /**
+     * transform(m11, m12, m21, m22, dx, dy)
+     * 这个方法须将当前的变形矩阵乘上下面的矩阵：
+     * m11 m21 dx
+     * m12 m22 dy
+     * 0    0   1
+     */
+
+    function draw() {
+        var ctx = document.getElementById('canvas').getContext('2d');
+        var sin = Math.sin(Math.PI / 6);
+        var cos = Math.cos(Math.PI / 6);
+        ctx.translate(200, 200);
+        var c = 0;
+        for (var i = 0; i < 12; i++) {
+            c = Math.floor(255 / 12 * i);
+            ctx.fillStyle = "rgb(" + c + "," + c + "," + c + ")";
+            ctx.fillRect(0, 0, 100, 10);
+            ctx.transform(cos, sin, -sin, cos, 0, 0);
+        }
+    }
+    draw();
+</script>
+</body>
+</html>
