@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Translate</title>
+</head>
+<body>
+<canvas id="canvas" width="800" height="800"></canvas>
+<script>
+    function draw() {
+        var ctx = document.getElementById('canvas').getContext('2d');
+        for (var i = 0; i < 3; i++) {
+            for (var j = 0; j < 3; j++) {
+                ctx.save();
+                ctx.translate(20 + j * 100, 20 + i * 100);
+                ctx.fillRect(0, 0, 50, 50);
+                ctx.restore();
+            }
+        }
+    }
+    draw();
+</script>
+</body>
+</html>
