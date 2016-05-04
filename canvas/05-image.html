@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text</title>
+</head>
+<body>
+<canvas id="tutorial" width="800" height="800"></canvas>
+<script>
+    var canvas = document.getElementById('tutorial');
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+        /**
+         * 基础用法
+         * drawImage(image, x, y)
+         * image 是 image 或者 canvas 对象，x 和 y 是其在目标 canvas 里的起始坐标.
+         */
+        var img = new Image();
+        img.onload = function () {
+            ctx.drawImage(img, 0, 0);
+        };
+        img.src = 'img/star.png';
+        /**
+         * 缩放
+         * drawImage(image, x, y, width, height)
+         * 这个方法多了2个参数：width 和 height，这两个参数用来控制 当像canvas画入时应该缩放的大小.
+         */
+
+        /**
+         * 切片
+         * drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
+         * 第一个参数和其它的是相同的，都是一个图像或者另一个 canvas 的引用.
+         * 其它8个参数前4个是定义图像源的切片位置和大小，后4个则是定义切片的目标显示位置和大小.
+         */
+    }
+</script>
+</body>
+</html>
