@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #888;
+}
+
+#banner {
+    background: #722872;
+    height: 80px;
+    border: none;
+    box-shadow: 0 1px 2px #333;
+}
+
+#logo {
+    height: 50px;
+}
+
+#banner #navbar ul li {
+    line-height: 80px;
+    padding: 0;
+}
+
+#banner #navbar ul li a {
+    height: 40px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#banner #navbar ul li.active a {
+    color: #222;
+    background: #e7e7e7;
+}
+
+#banner #navbar ul li a:hover {
+    color: #222;
+    box-shadow: 1px 1px 2px #333;
+}
+
+#banner .navbar-toggle {
+    margin-top: 20px;
+}
+
+#top {
+    height: 80px;
+    display: block;
+}
+
+main.container {
+    box-shadow: 1px 1px 2px #555;
+    padding: 0;
+    background: #eee;
+}
+
+main header {
+    padding: 90px 60px 80px 80px;
+    background: #aaa;
+}
+
+main header:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+main header .intro-text {
+    color: white;
+    font-size: 20px;
+}
+
+main header hr {
+    margin: 40px 0;
+    border-top: 5px solid white;
+}
+
+main header .skills {
+    font-size: 24px;
+}
+
+main header img {
+    float: right;
+    height: 240px;
+    border-radius: 50%;
+    margin-left: 60px;
+}
+
+#portfolio {
+    padding-top: 40px;
+}
+
+#portfolio h2 {
+    color: #888;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    font-weight: bold;
+}
+
+#portfolio hr {
+    border-top: 5px solid #888;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#portfolio .grid {
+    padding: 50px 60px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+#portfolio .grid img {
+    max-width: 420px;
+}
+
+#contact {
+    padding-top: 40px
+}
+
+#contact h2 {
+    color: #888;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    font-weight: bold;
+}
+
+#contact hr {
+    border-top: 5px solid #888;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#contact .row {
+    padding: 10px 60px 40px;
+    font-size: 20px;
+}
+
+#contactForm {
+    margin-top: 40px;
+    margin-right: 40px;
+}
+
+#contactForm input, textarea {
+    width: 100%;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 20px;
+    padding: 8px 0;
+    font-size: 28px;
+}
+
+#contactForm textarea {
+    resize: none;
+}
+
+#contactForm input:focus, textarea:focus {
+    outline: none;
+}
+
+#contactForm button {
+    padding: 6px 12px;
+}
+
+#contact .text {
+    margin-top: 40px;
+    color: #666;
+}
+
+#contact .text p:nth-child(2) {
+    margin-top: 40px;
+}
+
+#contact .text p:last-child {
+    margin-top: 260px;
+}
+
+footer {
+    background: #999;
+}
+
+#footer-above {
+    padding: 60px 0;
+    color: white;
+    text-align: center;
+}
+
+#footer-above h3 {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#footer-above p {
+    font-size: 20px;
+}
+
+#footer-above p > a {
+    color: #722872;
+}
+
+#footer-above ul > li {
+    list-style: none;
+    display: inline-block;
+    height: 48px;
+    width: 48px;
+    border: 1px solid white;
+    border-radius: 50%;
+    line-height: 48px;
+    text-align: center;
+}
+
+#footer-above ul > li .fa {
+    color: white;
+}
+
+#footer-below {
+    background: #722872;
+    text-align: center;
+    height: 72px;
+    line-height: 72px;
+    color: white;
+    font-size: 18px;
+}
